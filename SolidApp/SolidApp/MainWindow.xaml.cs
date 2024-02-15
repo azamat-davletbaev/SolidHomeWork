@@ -19,6 +19,8 @@ namespace SolidApp
         public MainWindow()
         {
             InitializeComponent();
-        }
+
+            DataContext = new Models.MainWindowViewModel();
+        }                
     }
 }

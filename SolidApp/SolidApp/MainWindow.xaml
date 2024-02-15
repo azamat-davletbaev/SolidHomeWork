@@ -4,9 +4,62 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SolidApp"
+        xmlns:model="clr-namespace:SolidApp.Models"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="900">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4">
+            <Label Content="Домашнее задание по SOLID принципам на примере реализации игры 'Угадай число'" FontWeight="Bold" FontSize="13"/>
+        </Grid>
+        
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" >
+            <Label Content="Введите диапазон чисел:"/>
+        </Grid>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" >
+            <TextBox Width="100" Text="{Binding MinNumber}"/>
+        </Grid>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2" >
+            <TextBox Width="100" Text="{Binding MaxNumber}"/>
+        </Grid>
+
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" >
+            <Label Content="Введите количество попыток:"/>
+        </Grid>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" >
+            <TextBox Width="100" Text="{Binding AttemptsCount}"/>
+        </Grid>
+
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="0" >
+            <Label Content="Введите число:"/>
+        </Grid>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" >
+            <TextBox Width="100" Text="{Binding Num}"/>
+        </Grid>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="2" >
+            <Button Content="Угадать!" Height="30" Width="100" Command="{Binding GuessApply}"/>
+        </Grid>
+
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="3" >
+            <Button Content="Начать заново" Height="30" Width="120" Command="{Binding NewGameApply}"/>
+        </Grid>
+
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4">
+            <Label Content="{Binding StatusMessage}" FontWeight="Bold" FontSize="13"/>
+        </Grid>
 
     </Grid>
 </Window>
